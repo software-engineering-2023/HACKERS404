@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <style>
+    body {
+	  background-image: url('Login1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 100px;
+    }
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-left: 2%;
+      color: #FFFFFF;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+      margin-left: 2%;
+
+    }
+    form {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 5px;
+      color: #FFFFFF;
+      margin-left: 2%;
+
+
+    }
+    input[type="text"],
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 30%;
+      margin-bottom: 10px;
+      margin-left: 2%;
+
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004f99;
+    }
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #186cc7;
+
+    }
+  
+      img {
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-top: 10%;
+        margin-bottom: 0%;
+       
+        
+        
+      }
+  </style>
+</head>
+<body >
+  <div >
+    <img src="Logo.png" alt="Paris" style="width:30%">
+  </div>
+  <h1>Login</h1>
+
+  <% if (typeof error !== 'undefined' && error.length > 0) { %>
+    <p><%= error %></p> <!-- Display error message if provided -->
+  <% } %>
+
+  <form method="POST" action="/login">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p>Don't have an account? <a href="/registration">Register</a></p>
+</body>
+</html>
