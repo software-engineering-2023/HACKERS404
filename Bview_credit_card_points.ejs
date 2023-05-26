@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>View Credit Card Points</title>
+  <style>
+    body {
+      background-image: url('Side Page.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0px;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .search-form {
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      width: 300px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .search-button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #4CAF50; /* Green color */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .logoff-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .logoff-button a {
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>View Credit Card Points</h1>
+
+  <form class="search-form">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search by credit card name...">
+    <button type="button" class="search-button" onclick="searchCreditCard()">Search</button>
+  </form>
+
+  <table id="creditCardTable">
+    <tr>
+      <th>Credit Card Name</th>
+      <th>Client</th>
+      <th>Points</th>
+      <th>Account</th>
+    </tr>
+    <% creditCards.forEach(creditCard => { %>
+      <tr>
+        <td><%= creditCard.creditCardName %></td>
+        <td><%= creditCard.client %></td>
+        <td><%= creditCard.points %></td>
+        <td><%= creditCard.account %></td>
+      </tr>
+    <% }) %>
+  </table>
+
+  <div class="logoff-button">
+    <a href="/login">Logoff</a>
+  </div>
+
+  <script>
+    function searchCreditCard() {
+      const input = document.getElementById("searchInput");
+      const keyword = input.value.toLowerCase();
+
+      const creditCardTable = document.getElementById("creditCardTable");
+      const rows = creditCardTable.getElementsByTagName("tr");
+
+      for (let i = 1; i < rows.length; i++) {
+        const creditCardName = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+        if (creditCardName.includes(keyword)) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

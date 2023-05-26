@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Client Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <style>
+    body {     
+      background-image: url('Side Page.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    
+    .logo {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    
+    .dashboard-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    
+    .dashboard-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-color: #F2F2F2;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dashboard-button:hover {
+      background-color: #E5E5E5;
+    }
+    
+    .dashboard-button-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .dashboard-button-label {
+      font-size: 14px;
+    }
+
+    .logoff-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #F44336; /* Red color */
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      font-size: 20px;
+      margin-top: 20px;
+      color: #ffffff; /* White color */
+      text-decoration: none;
+      width: 120px;
+    }
+
+    .logoff-button:hover {
+      background-color: #E53935; /* Darker shade of red on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="logo.png" alt="Logo" class="logo">
+      <!-- Add user profile information or menu options here -->
+    </div>
+    
+    <h1>Welcome Client!</h1>
+    
+    <div class="dashboard-buttons">
+      <!-- Dashboard buttons -->
+      <a href="/bank_account_transactions" class="dashboard-button">
+        <i class="dashboard-button-icon">B</i>
+        <span class="dashboard-button-label">View Bank Account Transactions</span>
+      </a>
+      <a href="/credit_card_transactions" class="dashboard-button">
+        <i class="dashboard-button-icon">C</i>
+        <span class="dashboard-button-label">View Credit Card Transactions</span>
+      </a>
+      <a href="/credit_card_points" class="dashboard-button">
+        <i class="dashboard-button-icon">P</i>
+        <span class="dashboard-button-label">View Credit Card Points</span>
+      </a>
+      <a href="/pay_credit_card_bill" class="dashboard-button">
+        <i class="dashboard-button-icon">$</i>
+        <span class="dashboard-button-label">Pay Credit Card Bill</span>
+      </a>
+      <a href="/transfer_money" class="dashboard-button">
+        <i class="dashboard-button-icon">T</i>
+        <span class="dashboard-button-label">Transfer Money</span>
+      </a>
+      <a href="/set_reminders" class="dashboard-button">
+        <i class="dashboard-button-icon">R</i>
+        <span class="dashboard-button-label">Set Reminders</span>
+      </a>
+      <a href="/pay_bills_third_party" class="dashboard-button">
+        <i class="dashboard-button-icon">P</i>
+        <span class="dashboard-button-label">Pay Bills (Third Party)</span>
+      </a>
+      <a href="/pay_bills_bank" class="dashboard-button">
+        <i class="dashboard-button-icon">$</i>
+        <span class="dashboard-button-label">Pay Bills (Bank)</span>
+      </a>
+      <a href="/report_technical_issues" class="dashboard-button">
+        <i class="dashboard-button-icon">!</i>
+        <span class="dashboard-button-label">Report Technical Issues</span>
+      </a>
+      <a href="/receive_notifications" class="dashboard-button">
+        <i class="dashboard-button-icon">N</i>
+        <span class="dashboard-button-label">Receive Notifications</span>
+      </a>
+      <a href="/report_card_theft" class="dashboard-button">
+        <i class="dashboard-button-icon">T</i>
+        <span class="dashboard-button-label">Report Card Theft</span>
+      </a>
+
+      <a href="/close_account" class="dashboard-button">
+        <i class="dashboard-button-icon">X</i>
+        <span class="dashboard-button-label">Close Account</span>
+      </a>
+
+      <a href="/logout" class="logoff-button">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Log Off</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

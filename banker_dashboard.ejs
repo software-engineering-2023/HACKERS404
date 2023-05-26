@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Banker Dashboard</title>
+  <style>
+    body {
+      background-image: url('Side Page.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      color: #333;
+    }
+    
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .user-information {
+      background-color: #F2F2F2;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .user-information p {
+      margin: 5px 0;
+    }
+    
+    .action-buttons {
+      margin-top: 10px;
+    }
+    
+    .action-buttons button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .action-buttons button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome Banker!</h1>
+    <h2>New Registrations:</h2>
+    
+    <% registrations.forEach(registration => { %>
+      <div class="user-information">
+        <h3>User Information:</h3>
+        <p><strong>Username:</strong> <%= registration.username %></p>
+        <p><strong>Full Name:</strong> <%= registration.fullName %></p>
+        <p><strong>Date of Birth:</strong> <%= registration.dateOfBirth %></p>
+        <p><strong>National ID:</strong> <%= registration.nationalId %></p>
+
+        <div class="action-buttons">
+          <form method="POST" action="/banker/confirm">
+            <input type="hidden" name="username" value="<%= registration.username %>">
+            <button type="submit" name="action" value="accept">Accept</button>
+            <button type="submit" name="action" value="reject">Reject</button>
+          </form>
+        </div>
+      </div>
+    <% }) %>
+
+    <!-- Add other content for the Banker Dashboard here -->
+  </div>
+</body>
+</html>

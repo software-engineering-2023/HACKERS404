@@ -1,0 +1,16 @@
+<body>
+  <h1>Close Bank Account</h1>
+
+  <form action="/close_account" method="POST">
+    <label for="accountNumber">Account Number:</label>
+    <input type="text" id="accountNumber" name="accountNumber" required>
+    <label for="reason">Reason for Closure:</label>
+    <input type="text" id="reason" name="reason" required>
+    <button type="submit">Close Account</button>
+  </form>
+
+  <!-- Links to other pages -->
+  <a href="/view_bank_transactions">View Bank Account Transactions</a>
+  <a href="/view_credit_card_transactions">View Credit Card Transactions</a>
+  <a href="/view_third_party_transactions">View Third-Party App Transactions</a>
+</body>
