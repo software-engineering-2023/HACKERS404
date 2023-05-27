@@ -132,10 +132,12 @@ app.post('/login', (req, res) => {
   }
 });
 
-app.get('/client_dashboard', (req, res) => {
-  
-    res.render('client_dashboard');
- 
+app.get('/client/dashboard', (req, res) => {
+  if (req.session.userType === 'client') {
+    res.render('client_dashboard', { registrations });
+  } else {
+    res.redirect('/login');
+  }
 });
 
 

@@ -6,10 +6,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <style>
     body {
-	  background-image: url('Login1.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+      background-image: url('Login1.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 100px;
@@ -26,7 +26,6 @@
       margin-bottom: 10px;
       color: #FFFFFF;
       margin-left: 2%;
-
     }
     form {
       margin-top: 20px;
@@ -37,8 +36,6 @@
       margin-bottom: 5px;
       color: #FFFFFF;
       margin-left: 2%;
-
-
     }
     input[type="text"],
     input[type="password"] {
@@ -49,7 +46,6 @@
       width: 30%;
       margin-bottom: 10px;
       margin-left: 2%;
-
     }
     button {
       padding: 10px 20px;
@@ -66,27 +62,72 @@
     a {
       color: #FFFFFF;
       text-decoration: none;
-      
     }
     a:hover {
       text-decoration: underline;
       color: #186cc7;
-
     }
   
-      img {
-        margin-left: 0%;
-        margin-right: 0%;
-        margin-top: 10%;
-        margin-bottom: 0%;
-       
-        
-        
-      }
+    img {
+      margin-left: 0%;
+      margin-right: 0%;
+      margin-top: 10%;
+      margin-bottom: 0%;
+    }
+    .slider-container {
+  position: absolute;
+  top: -30px;
+  left: 45%;
+  width: 900px;
+  height: 800px;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
   </style>
+  <script>
+    window.onload = function() {
+      var slider = document.querySelector('.slider');
+      var images = Array.from(slider.getElementsByTagName('img'));
+      var currentIndex = 0;
+      var slideInterval = setInterval(nextSlide, 4000);
+
+      function showCurrentSlide() {
+        images.forEach(function(image, index) {
+          if (index === currentIndex) {
+            image.style.display = 'block';
+          } else {
+            image.style.display = 'none';
+          }
+        });
+      }
+
+      function nextSlide() {
+        images[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].style.display = 'block';
+      }
+
+      showCurrentSlide();
+    };
+  </script>
 </head>
 <body >
-  <div >
+  <div>
     <img src="Logo.png" alt="Paris" style="width:30%">
   </div>
   <h1>Login</h1>
@@ -106,5 +147,22 @@
   </form>
 
   <p>Don't have an account? <a href="/registration">Register</a></p>
+
+  <div class="slider-container">
+    <div class="slider">
+      <img src="ll.png" alt="LL">
+      <img src="p2.jpg" alt="P2">
+      <img src="y.png" alt="Y">
+      <img src="w.jpg" alt="W">
+      <img src="ll.png" alt="LL">
+      <img src="p2.jpg" alt="P2">
+      <img src="y.png" alt="Y">
+      <img src="w.jpg" alt="W">
+      <img src="ll.png" alt="LL">
+      <img src="p2.jpg" alt="P2">
+      <img src="y.png" alt="Y">
+      <img src="w.jpg" alt="W">
+    </div>
+  </div>
 </body>
 </html>

@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Close Bank Account</title>
-  <style>
-  body {
-      
-    background-image: url('Side Page.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-     
-    
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0px;
-}
-</style>
-</head>
 <body>
   <h1>Close Bank Account</h1>
-  <!-- Add content for closing bank account here -->
+
+  <form action="/close_account" method="POST">
+    <label for="accountNumber">Account Number:</label>
+    <input type="text" id="accountNumber" name="accountNumber" required>
+    <label for="reason">Reason for Closure:</label>
+    <input type="text" id="reason" name="reason" required>
+    <button type="submit">Close Account</button>
+  </form>
+
+  <!-- Links to other pages -->
+  <a href="/view_bank_transactions">View Bank Account Transactions</a>
+  <a href="/view_credit_card_transactions">View Credit Card Transactions</a>
+  <a href="/view_third_party_transactions">View Third-Party App Transactions</a>
 </body>
-</html>

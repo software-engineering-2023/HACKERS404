@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>View Bank Account Transactions</title>
+  <title>View Credit Card Points</title>
   <style>
     body {
       background-image: url('Side Page.jpg');
@@ -54,38 +54,58 @@
       border: none;
       cursor: pointer;
     }
+
+    .logoff-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .logoff-button a {
+      color: #333;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <h1>View Bank Account Transactions</h1>
+  <h1>View Credit Card Points</h1>
 
   <form class="search-form">
-    <input type="text" class="search-input" id="searchInput" placeholder="Search by account name...">
-    <button type="button" class="search-button" onclick="searchAccount()">Search</button>
+    <input type="text" class="search-input" id="searchInput" placeholder="Search by credit card name...">
+    <button type="button" class="search-button" onclick="searchCreditCard()">Search</button>
   </form>
 
-  <table id="accountTable">
+  <table id="creditCardTable">
     <tr>
+      <th>Credit Card Name</th>
       <th>Client</th>
-      <th>Account Number</th>
-      <th>Transactions</th>
+      <th>Points</th>
+      <th>Account</th>
     </tr>
-    <!-- Account data will be dynamically added here -->
+    <% creditCards.forEach(creditCard => { %>
+      <tr>
+        <td><%= creditCard.creditCardName %></td>
+        <td><%= creditCard.client %></td>
+        <td><%= creditCard.points %></td>
+        <td><%= creditCard.account %></td>
+      </tr>
+    <% }) %>
   </table>
+
   <div class="logoff-button">
     <a href="/login">Logoff</a>
   </div>
+
   <script>
-    function searchAccount() {
+    function searchCreditCard() {
       const input = document.getElementById("searchInput");
       const keyword = input.value.toLowerCase();
 
-      const accountTable = document.getElementById("accountTable");
-      const rows = accountTable.getElementsByTagName("tr");
+      const creditCardTable = document.getElementById("creditCardTable");
+      const rows = creditCardTable.getElementsByTagName("tr");
 
       for (let i = 1; i < rows.length; i++) {
-        const accountName = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
-        if (accountName.includes(keyword)) {
+        const creditCardName = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+        if (creditCardName.includes(keyword)) {
           rows[i].style.display = "";
         } else {
           rows[i].style.display = "none";

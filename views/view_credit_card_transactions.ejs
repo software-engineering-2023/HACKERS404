@@ -5,20 +5,91 @@
   <title>View Credit Card Transactions</title>
   <style>
     body {
-        
       background-image: url('Side Page.jpg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: 100% 100%;
-       
-      
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0px;
-  }
-  </style></head>
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0px;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .search-form {
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      width: 300px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .search-button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #4CAF50; /* Green color */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
   <h1>View Credit Card Transactions</h1>
-  <!-- Display credit card transactions here -->
+
+  <form class="search-form">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search by account name...">
+    <button type="button" class="search-button" onclick="searchClient()">Search</button>
+  </form>
+
+  <table id="clientTable">
+    <tr>
+      <th>Client</th>
+      <th>Account</th>
+      <th>Credit Cards</th>
+    </tr>
+    <!-- Client data will be dynamically added here -->
+  </table>
+
+  <script>
+    function searchClient() {
+      const input = document.getElementById("searchInput");
+      const keyword = input.value.toLowerCase();
+
+      const clientTable = document.getElementById("clientTable");
+      const rows = clientTable.getElementsByTagName("tr");
+
+      for (let i = 1; i < rows.length; i++) {
+        const clientName = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+        if (clientName.includes(keyword)) {
+          rows[i].style.display = "";
+        } else {
+          rows[i].style.display = "none";
+        }
+      }
+    }
+  </script>
 </body>
 </html>
