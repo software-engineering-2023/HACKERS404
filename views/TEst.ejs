@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Client Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <style>
+    body {     
+      background-image: url('Home.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 0;
+      padding: 40px;
+    }
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    
+    .logo {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    
+    .dashboard-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    
+    .dashboard-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-color: #F2F2F2;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .dashboard-button:hover {
+      background-color: #E5E5E5;
+    }
+    
+    .dashboard-button-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .dashboard-button-label {
+      font-size: 14px;
+    }
+
+    .logoff-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: #F44336; /* Red color */
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      font-size: 20px;
+      margin-top: 20px;
+      color: #ffffff; /* White color */
+      text-decoration: none;
+      width: 120px;
+    }
+
+    .logoff-button:hover {
+      background-color: #E53935; /* Darker shade of red on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="Logo.png" alt="Logo" class="logo">
+      <!-- Add user profile information or menu options here -->
+    </div>
+    
+    <h1>Welcome Client!</h1>
+    
+    <div class="dashboard-buttons">
+      <!-- Dashboard buttons -->
+      <a href="/view_bank_transactions" class="dashboard-button">
+        <i class="dashboard-button-icon">B</i>
+        <span class="dashboard-button-label">View Bank Account Transactions</span>
+      </a>
+      <a href="/banker/dashboard" class="dashboard-button">
+        <i class="dashboard-button-icon">C</i>
+        <span class="dashboard-button-label">View Registrations</span>
+      </a>
+      <a href="/view_credit_card_points" class="dashboard-button">
+        <i class="dashboard-button-icon">P</i>
+        <span class="dashboard-button-label">View Credit Card Points</span>
+      </a>
+      <a href="/view_credit_card_transactions" class="dashboard-button">
+        <i class="dashboard-button-icon">$</i>
+        <span class="dashboard-button-label">View Credit Card Transactions</span>
+      </a>
+      <a href="/transfer_money" class="dashboard-button">
+        <i class="dashboard-button-icon">T</i>
+        <span class="dashboard-button-label">Transfer Money</span>
+      </a>
+      <a href="/set_reminders" class="dashboard-button">
+        <i class="dashboard-button-icon">R</i>
+        <span class="dashboard-button-label">Set Reminders for Payments</span>
+      </a>
+      <a href="/view_third_party_transactions" class="dashboard-button">
+        <i class="dashboard-button-icon">P</i>
+        <span class="dashboard-button-label">View Third-Party App Transactions</span>
+      </a>
+     
+      <a href="/logout" class="logoff-button">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Log Off</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
