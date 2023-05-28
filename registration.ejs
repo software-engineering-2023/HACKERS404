@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <title>Registration</title>
   <!-- Add your CSS stylesheets and other external dependencies here -->
-  
-</head>
-<body>
-  <h1>Registration</h1>
   <style>
     body {
-        background-image: url("register background.jpeg");
+        background-image: url("register1.png");
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 110%;
+        margin: 0;
+      padding: 70px 20px;
         }
-    h1 {
-        color: white;
-        text-align: center;
-        -webkit-text-stroke: 1px blue;
+        h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-left: 2%;
+      color: #FFFFFF;
     }
     .cont {
         position:relative;
@@ -26,14 +26,53 @@
         color: white;
         -webkit-text-stroke: 0.5px black;
     }
+    label {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 5px;
+      color: #FFFFFF;
+      margin-left: 2%;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+      margin-left: 2%;
+
+    }
+    button{
+      color: white;
+      background-color:darkcyan;
+      font-size: large;
+      padding: 8px;
+    }
+    input{
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 30%;
+      margin-bottom: 10px;
+    }
+    
+    
+
+
 </style>
+</head>
+<body>
+  <div >
+    <img src="Logo.png" alt="Paris" style="width:30%">
+  </div>
+  <h1>Registration</h1>
+
   <% if (typeof error !== 'undefined' && error.length > 0) { %>
     <p><%= error %></p> <!-- Display error message if provided -->
   <% } %>
 
   <form method="POST" action="/registration">
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+    <input type="text" id="username" name="username"  required>
 
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
@@ -41,7 +80,7 @@
     <label for="fullName">Full Name:</label>
     <input type="text" id="fullName" name="fullName" required>
 
-    <label for="dateOfBirth">Date of Birth:</label>
+    <label for="dateOfBirth">Date of Birth: </label>
     <input type="date" id="dateOfBirth" name="dateOfBirth" required>
 
     <label for="nationalId">National ID:</label>
@@ -50,6 +89,6 @@
     <button type="submit">Register</button>
   </form>
 
-  <p>Already have an account? <a href="/login">Login</a></p>
+  <p>Already have an account?<a   href="/login">Login</a></p>
 </body>
 </html>

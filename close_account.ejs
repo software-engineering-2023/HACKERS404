@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Close Account</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .logo {
+      width: 420px;
+      height: 320px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #666;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .submit-button {
+      padding: 10px 20px;
+      background-color: #e74c3c; /* Red color */
+      color: #fff; /* White color */
+      font-size: 18px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #c0392b; /* Darker shade of red on hover */
+    }
+
+    .logoff-button {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin-top: 0px;
+      margin-left: 85px;
+    }
+
+    .logoff-button:hover {
+      background-color: #555;
+    }
+
+    .logoff-button i {
+      margin-right: 5px;
+    }
+
+    .logoff-button span {
+      vertical-align: middle;
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 120%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>Close Account</h1>
+      
+    <form action="/close_account" method="POST">
+      <div class="form-group">
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" id="accountNumber" name="accountNumber" placeholder="Enter your account number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason for closing the account:</label>
+        <input type="text" id="reason" name="reason" placeholder="Enter the reason" required>
+      </div>
+
+      <div class="button-container">
+        <button type="submit" class="submit-button">Close Account</button>
+        <a href="/login" class="logoff-button">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Log Off</span>
+        </a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
