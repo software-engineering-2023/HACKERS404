@@ -6,16 +6,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <style>
     body {     
-      background-image: url('Home.png');
+      background-image: url('Home.jpeg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
       font-family: Arial, sans-serif;
+      overflow: hidden;
     }
     
     .container {
       max-width: 800px;
-      margin: 0 0;
+      margin: 0 ;
       padding: 40px;
     }
     
@@ -38,6 +39,7 @@
     }
     
     .dashboard-button {
+      grid: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -81,12 +83,13 @@
     .logoff-button:hover {
       background-color: #E53935; /* Darker shade of red on hover */
     }
+    
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <img src="Logo.png" alt="Logo" class="logo">
+      <img src="cyberbank.png" alt="Logo" class="logo">
       <!-- Add user profile information or menu options here -->
     </div>
     
@@ -94,19 +97,19 @@
     
     <div class="dashboard-buttons">
       <!-- Dashboard buttons -->
-      <a href="/bank_account_transactions" class="dashboard-button">
+      <a href="/view_bank_transactions" class="dashboard-button">
         <i class="dashboard-button-icon">B</i>
         <span class="dashboard-button-label">View Bank Account Transactions</span>
       </a>
-      <a href="/credit_card_transactions" class="dashboard-button">
+      <a href="/view_credit_card_transactions" class="dashboard-button">
         <i class="dashboard-button-icon">C</i>
-        <span class="dashboard-button-label">View Credit Card Transactions</span>
+        <span class="dashboard-button-label">View Credit Card Transactions </span>
       </a>
-      <a href="/credit_card_points" class="dashboard-button">
+      <a href="/view_credit_card_points" class="dashboard-button">
         <i class="dashboard-button-icon">P</i>
         <span class="dashboard-button-label">View Credit Card Points</span>
       </a>
-      <a href="/pay_credit_card_bill" class="dashboard-button">
+      <a href="/paycreditcardbill" class="dashboard-button">
         <i class="dashboard-button-icon">$</i>
         <span class="dashboard-button-label">Pay Credit Card Bill</span>
       </a>
@@ -118,15 +121,15 @@
         <i class="dashboard-button-icon">R</i>
         <span class="dashboard-button-label">Set Reminders</span>
       </a>
-      <a href="/pay_bills_third_party" class="dashboard-button">
+      <a href="/paybillthirdparty" class="dashboard-button">
         <i class="dashboard-button-icon">P</i>
         <span class="dashboard-button-label">Pay Bills (Third Party)</span>
       </a>
-      <a href="/pay_bills_bank" class="dashboard-button">
+      <a href="/paybillbank" class="dashboard-button">
         <i class="dashboard-button-icon">$</i>
         <span class="dashboard-button-label">Pay Bills (Bank)</span>
       </a>
-      <a href="/report_technical_issues" class="dashboard-button">
+      <a href="/reporttechnicalissues" class="dashboard-button">
         <i class="dashboard-button-icon">!</i>
         <span class="dashboard-button-label">Report Technical Issues</span>
       </a>
@@ -134,17 +137,28 @@
         <i class="dashboard-button-icon">N</i>
         <span class="dashboard-button-label">Receive Notifications</span>
       </a>
-      <a href="/report_card_theft" class="dashboard-button">
+      <a href="/creditcard_issues" class="dashboard-button">
         <i class="dashboard-button-icon">T</i>
-        <span class="dashboard-button-label">Report Card Theft</span>
+        <span class="dashboard-button-label">Report CarditCard Problems</span>
       </a>
-
-      <a href="/close_account" class="dashboard-button">
-        <i class="dashboard-button-icon">X</i>
-        <span class="dashboard-button-label">Close Account</span>
       </a>
+      <a href="/creditcardrequest" class="dashboard-button">
+        <i class="dashboard-button-icon">C</i>
+        <span class="dashboard-button-label">Apply for CreditCard</span>
+      </a>
+      <a href="/personalloan" class="dashboard-button">
+        <i class="dashboard-button-icon">P</i>
+        <span class="dashboard-button-label">Apply for Personal Loan</span>
+      </a>
+      <a href="/carloan" class="dashboard-button">
+        <i class="dashboard-button-icon">C</i>
+        <span class="dashboard-button-label">Apply for Car Loan</span>
+      </a>
+      <a href="/deleteaccount" class="dashboard-button" >
+        <i class="dashboard-button-icon">X!</i>
+        <span class="dashboard-button-label">Delete Account</span>
 
-      <a href="/login" class="logoff-button">
+      <a href="/logout" class="logoff-button">
         <i class="fas fa-sign-out-alt"></i>
         <span>Log Off</span>
       </a>

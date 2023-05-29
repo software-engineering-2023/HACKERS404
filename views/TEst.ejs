@@ -1,133 +1,287 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Client Dashboard</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <style>
-    body {     
-      background-image: url('Home.png');
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css"/>
+    <link rel ="stylesheet" href = "https://fontawesome.com/icons/message-question?f=classic&s=solid"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+      
+        
+        body { 
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+       background-image: url('Home.png');
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-size: cover;
+      background-size:100% 85%;
+      background-position: bottom ;
+      margin: 0%;
       font-family: Arial, sans-serif;
-    }
-    
-    .container {
-      max-width: 800px;
-      margin: 0 0;
-      padding: 40px;
-    }
-    
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 40px;
-    }
-    
-    .logo {
-      font-size: 15px;
-      font-weight: bold;
-    }
-    
-    .dashboard-buttons {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px;
-    }
-    
-    .dashboard-button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background-color: #F2F2F2;
-      border-radius: 8px;
-      text-align: center;
-      transition: background-color 0.3s ease;
-    }
-    
-    .dashboard-button:hover {
-      background-color: #E5E5E5;
-    }
-    
-    .dashboard-button-icon {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    
-    .dashboard-button-label {
-      font-size: 14px;
-    }
-
-    .logoff-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      background-color: #F44336; /* Red color */
-      border-radius: 8px;
-      text-align: center;
-      transition: background-color 0.3s ease;
-      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;      
+      
+        }
+        
+        .header {
+          overflow: hidden;
+          background-color: #6eb1bd;
+          padding: 10px 10px;
+          
+        }
+        
+        .header a {
+          float: left;
+          color: black;
+          text-align: center;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px; 
+          line-height: 25px;
+          border-radius: 4px;
+        }
+        
+        .header a:hover {
+          color: rgb(49, 114, 255);
+        }
+        
+        .header a.active {
+          background-color: rgb(8, 9, 9);
+          color: white;
+          font-size: 20px;
+        }
+        
+        .header-right {
+          float: right;
+          padding: 25px;
+          text-decoration: none;
+          font-size: 1.2rem;
+          margin-left: 25px;
+          font-weight: 600;
+          text-align: center;
+          
+        }
+        .header img {
+          margin-left: 0%;
+          
+        }
+        form {
       margin-top: 20px;
-      color: #ffffff; /* White color */
-      text-decoration: none;
-      width: 120px;
     }
+    label {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 5px;
+      color: #FFFFFF;
+      margin-left: 2%;
 
-    .logoff-button:hover {
-      background-color: #E53935; /* Darker shade of red on hover */
+
     }
-  </style>
+    input[type="text"],
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 30%;
+      margin-bottom: 10px;
+      margin-left: 2%;
+
+    }
+        
+       
+        </style>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css"/>
+    <link rel ="stylesheet" href = "https://fontawesome.com/icons/message-question?f=classic&s=solid"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+      
+        
+        body { 
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+       background-image: url('Home.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size:100% 85%;
+      background-position: bottom ;
+      margin: 0%;
+      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;      
+      
+        }
+        
+        .header {
+          overflow: hidden;
+          background-color: #6eb1bd;
+          padding: 10px 10px;
+          
+        }
+        
+        .header a {
+          float: left;
+          color: black;
+          text-align: center;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px; 
+          line-height: 25px;
+          border-radius: 4px;
+        }
+        
+        .header a:hover {
+          color: rgb(49, 114, 255);
+        }
+        
+        .header a.active {
+          background-color: rgb(8, 9, 9);
+          color: white;
+          font-size: 20px;
+        }
+        
+        .header-right {
+          float: right;
+          padding: 25px;
+          text-decoration: none;
+          font-size: 1.2rem;
+          margin-left: 25px;
+          font-weight: 600;
+          text-align: center;
+          
+        }
+        .header img {
+          margin-left: 0%;
+          
+        }
+        
+       
+        </style>
+</head>
+
 <body>
-  <div class="container">
+
     <div class="header">
-      <img src="Logo.png" alt="Logo" class="logo">
-      <!-- Add user profile information or menu options here -->
-    </div>
+        <img src="Logo.png" alt="L"  width="300" height="100">
+  
+        <div class="header-right">
+            
+            <a href ="#"> <i class="fa-solid fa-house fa-1x"></i>   Home   </a>
+            <a href ="#"> <i class="fa-solid fa-circle-info fa-1x">  </i>  About </a>
+            <a href ="#"> <i class="fa-solid fa-location-dot fa-1x"></i>  Branch & ATM Finder  </a>
+            <a href ="#"> <i class="fa-solid fa-phone fa-1x"></i>   Contact Us   </a>
+
+          <a class="active" href="/login">Login</a>
+          
+           
+        
+          
+        </div>
+      </div>
+      
+      <div style="padding-left:20px">
+        
+      </div>
+     <br/> 
+     </img src="WhatsApp Image 2023-05-27 at 8.12.39 PM.jpeg" alt="Italian Trulli" style="width:400px;height:400px;">
+     <div class ="pas">
+      <section class ="us">
+
+      <h1> Next Generation <br/>
+        digital banking</h1>
+        <p>
+          <br/> 
+          Take your financial life online. Your bank account<br/> 
+         will be a one-step-away.<br/> 
+         Banking is about more than just products with <br/>
+         Cyber Bank, it's an experience!<br/>
+         <br/>
+        </p>
+        <form method="GET" action="/registration">
+        <button> Register Now </button>
+        </form>
+           
+      </section>
+     </div>
+   
+
+
+    <br/>
     
-    <h1>Welcome Client!</h1>
+
+
+
+
+
+
+    <br/>
     
-    <div class="dashboard-buttons">
-      <!-- Dashboard buttons -->
-      <a href="/view_bank_transactions" class="dashboard-button">
-        <i class="dashboard-button-icon">B</i>
-        <span class="dashboard-button-label">View Bank Account Transactions</span>
-      </a>
-      <a href="/banker/dashboard" class="dashboard-button">
-        <i class="dashboard-button-icon">C</i>
-        <span class="dashboard-button-label">View Registrations</span>
-      </a>
-      <a href="/view_credit_card_points" class="dashboard-button">
-        <i class="dashboard-button-icon">P</i>
-        <span class="dashboard-button-label">View Credit Card Points</span>
-      </a>
-      <a href="/view_credit_card_transactions" class="dashboard-button">
-        <i class="dashboard-button-icon">$</i>
-        <span class="dashboard-button-label">View Credit Card Transactions</span>
-      </a>
-      <a href="/transfer_money" class="dashboard-button">
-        <i class="dashboard-button-icon">T</i>
-        <span class="dashboard-button-label">Transfer Money</span>
-      </a>
-      <a href="/set_reminders" class="dashboard-button">
-        <i class="dashboard-button-icon">R</i>
-        <span class="dashboard-button-label">Set Reminders for Payments</span>
-      </a>
-      <a href="/view_third_party_transactions" class="dashboard-button">
-        <i class="dashboard-button-icon">P</i>
-        <span class="dashboard-button-label">View Third-Party App Transactions</span>
-      </a>
-     
-      <a href="/logout" class="logoff-button">
-        <i class="fas fa-sign-out-alt"></i>
-        <span>Log Off</span>
-      </a>
-    </div>
-  </div>
+</body>
+</html>
+<body>
+
+    <div class="header">
+        <img src="Logo.png" alt="L"  width="300" height="100">
+  
+        <div class="header-right">
+            
+            <a href ="#"> <i class="fa-solid fa-house fa-1x"></i>   Home   </a>
+            <a href ="#"> <i class="fa-solid fa-circle-info fa-1x">  </i>  About </a>
+            <a href ="#"> <i class="fa-solid fa-location-dot fa-1x"></i>  Branch & ATM Finder  </a>
+            <a href ="#"> <i class="fa-solid fa-phone fa-1x"></i>   Contact Us   </a>
+
+            <h1>Login</h1>
+
+            <% if (typeof error !== 'undefined' && error.length > 0) { %>
+              <p><%= error %></p> <!-- Display error message if provided -->
+            <% } %>
+          
+            <form method="POST" action="/login">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" required>
+          
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required>
+          
+              <button type="submit">Login</button>
+            </form>
+          
+           
+        
+          
+        </div>
+      </div>
+      
+      <div style="padding-left:20px">
+        
+      </div>
+     <br/> 
+           
+      </section>
+     </div>
+   
+
+
+    <br/>
+    
+
+
+
+
+
+
+    <br/>
+    
 </body>
 </html>

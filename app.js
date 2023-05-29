@@ -19,6 +19,8 @@ let registrations = [];
 let rejectedRegistrations = [];
 let clients = [];
 
+
+
 app.get('/', (req, res) => {
   res.render('welcome');
 });
@@ -34,6 +36,8 @@ app.get('/registrationBanker', (req, res) => {
 app.get('/registration', (req, res) => {
   res.render('registration');
 });
+
+
 
 app.post('/registration', (req, res) => {
   const { username, password, fullName, dateOfBirth, nationalId } = req.body;
@@ -54,6 +58,7 @@ app.post('/registration', (req, res) => {
   };
 
   registrations.push(registrationDetails);
+  
 
   res.render('registration_success');
 });
@@ -123,7 +128,7 @@ app.post('/login', (req, res) => {
   if (client) {
     if (client.status === 'client') {
       req.session.userType = 'client';
-      res.redirect('/client/dashboard');
+      res.render('client_dashboard');
     } else {
       res.render('registration_success', { username });
     }
@@ -132,12 +137,10 @@ app.post('/login', (req, res) => {
   }
 });
 
-app.get('/client/dashboard', (req, res) => {
-  if (req.session.userType === 'client') {
-    res.render('client_dashboard', { registrations });
-  } else {
-    res.redirect('/login');
-  }
+app.get('/client_dashboard', (req, res) => {
+  
+    res.render('client_dashboard');
+ 
 });
 
 
@@ -150,9 +153,7 @@ app.get('/close_bank_account', (req, res) => {
 
 
 
-app.get('/view_bank_transactions', (req, res) => {
-  res.render('view_bank_transactions');
-});
+
 
 app.get('/view_credit_card_transactions', (req, res) => {
   res.render('view_credit_card_transactions');
@@ -164,8 +165,8 @@ app.get('/view_credit_card_points', (req, res) => {
 app.get('/set_reminders', (req, res) => {
   res.render('set_reminders');
 });
-app.get('/technical_issues', (req, res) => {
-  res.render('technical_issues');
+app.get('/creditcard_issues', (req, res) => {
+  res.render('creditcard_issues');
 });
 
 app.get('/view_third_party_transactions', (req, res) => {
@@ -183,8 +184,87 @@ app.post('/logout', (req, res) => {
 
 
 
+//added part
 
+app.get('/view_bank_transactions', (req, res) => {
+  res.render('view_bank_transactions');
+})
 
+app.get('/reportcreditcarddamage', (req, res) => {
+  res.render('report_card_damage');
+});
+
+app.get('/reportcreditcardloss', (req, res) => {
+  res.render('report_card_loss');
+});
+
+app.get('/reportcreditcardtheft', (req, res) => {
+  res.render('report_card_theft');
+});
+app.get('/reporttechnicalissues', (req, res) => {
+  res.render('report_technical_issues');
+});
+
+app.get('/paybillbank', (req, res) => {
+  res.render('pay_bill_bank');
+});
+
+app.get('/paybillthirdparty', (req, res) => {
+  res.render('pay_bills_third_party');
+});
+
+app.get('/creditcardrequest', (req, res) => {
+  res.render('credit_card_request');
+});
+
+app.get('/transfer_money', (req, res) => {
+  res.render('transfer_money');
+});
+
+app.get('/transfer', (req, res) => {
+  res.render('transfer');
+});
+
+app.get('/personalloan', (req, res) => {
+  res.render('personalloan');
+});
+
+app.get('/carloan', (req, res) => {
+  res.render('carloan');
+});
+
+app.get('/deleteaccount', (req, res) => {
+  res.render('deleteaccount');
+});
+
+app.post('/login', (req, res) => {
+
+});
+
+function removeItemAll(arr) {
+  var i = 0;
+  while (i < arr.length) {
+     
+      arr.splice(i, 1);
+    
+      ++i;
+  
+  }
+  return arr;
+}
+
+app.post('/deleteaccount', (req, res) => {
+  removeItemAll(clients);
+  res.render('login');
+});
+
+app.get('/paycreditcardbill', (req, res) => {
+  res.render('pay_credit_card_bills');
+});
+
+app.get('/receive_notifications', (req, res) => {
+  res.render('receive_notification');
+});
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
