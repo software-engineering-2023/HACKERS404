@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css"/>
+    <link rel ="stylesheet" href = "https://fontawesome.com/icons/message-question?f=classic&s=solid"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+      
+        
+        body { 
+          overflow: hidden;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+       background-image: url('Home.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size:100% 85%;
+      background-position: bottom ;
+      margin: 0%;
+      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;      
+      
+        }
+        
+        .header {
+          overflow: hidden;
+          background-color: #6eb1bd;
+          position: relative;
+          
+        }
+        
+        .header a {
+          float: left;
+          color: black;
+          text-align: center;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px; 
+          line-height: 25px;
+          border-radius: 4px;
+        }
+        
+        .header a:hover {
+          color: rgb(49, 114, 255);
+        }
+        
+        .header a.active {
+          background-color: rgb(8, 9, 9);
+          color: white;
+          font-size: 20px;
+        }
+        
+        .header button{
+          position: absolute;
+          top: 25%;
+          width: 7%;
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+          margin-left: 92%;
+          color: #ffffff;
+          background-color: #000000;
+        }
+         
+        .header-right {
+          float: right;
+          padding: 25px;
+          text-decoration: none;
+          font-size: 1.2rem;
+          margin-left: 25px;
+          font-weight: 600;
+          text-align: center;
+          
+        }
+        .header img {
+          margin-left: 0%;
+          
+        }
+        h1 {
+          font-size: 50px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          margin-left: 2%;
+          color: #000000;
+        }
+        p {
+          font-size: 18px;
+          margin-bottom: 10px;
+          color: #000000;
+          margin-left: 2%;
+        }
+        form {
+          margin-top: 20px;
+        }
+        label {
+          display: block;
+          font-size: 25px;
+          margin-bottom: 5px;
+          color: #000000;
+          margin-left: 2%;
+        }
+        input[type="text"],
+        input[type="password"] {
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          width: 30%;
+          margin-bottom: 10px;
+          margin-left: 2%;
+        }
+        button {
+          padding: 10px 20px;
+          background-color: #0066cc;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #004f99;
+        }
+        a {
+          color: #000000;
+          text-decoration: none;
+        }
+        a:hover {
+          
+          color: #186cc7;
+        }
+       
+        </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="Logo.png" alt="L"  width="300" height="100">
+  
+        <form method="GET" action="/">
+          <button>Home</button>
+        </form>
+      </div>
+      <h1>Login</h1>
+
+      <% if (typeof error !== 'undefined' && error.length > 0) { %>
+        <p><%= error %></p> <!-- Display error message if provided -->
+      <% } %>
+    
+      <form method="POST" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    
+        <button type="submit">Login</button>
+      </form>
+    
+      <p>Don't have an account? <a href="/registration">Register</a></p>        
+     
+     <br/> 
+    
+    
+
+      
+       
+           
+      </section>
+     </div>
+   
+
+
+    <br/>
+    
+
+
+
+
+
+
+    <br/>
+    
+</body>
+</html>

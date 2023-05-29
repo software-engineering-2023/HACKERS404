@@ -1,0 +1,51 @@
+h1{
+    display:flex;
+    font-size: 70px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    margin-left: 2%;
+    line-height: 1.1;
+    color:hsl(0, 0%, 4%);
+    align-items: center;
+    font-family:Georgia, 'Times New Roman', Times, serif
+    
+}
+p{
+color:hsl(205, 73%, 32%);
+margin-bottom: 15px;
+margin-left: 2%;
+
+font-weight: 1000;
+font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+button{
+    padding : 12px 28px;
+    border : none;
+    outline-width: 0;
+    color: white;
+    border-radius: 24 px;
+    cursor:pointer;
+    margin-left: 2%;
+
+    background-color: black;
+}
+.why-us{
+    padding-top: 10vh;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10vh;
+    background-color:rgb(243, 248, 245);
+    
+}
+
+.why-us>h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: hsl(231, 5%, 26%);
+    line-height: 1.1;
+    
+
+}

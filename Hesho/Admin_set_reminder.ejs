@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin - Set Reminders</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #4CAF50; /* Green color */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin - Set Reminders</h1>
+  
+  <h2>Set Reminder</h2>
+  <form action="/set_reminder" method="POST">
+    <label for="reminderMessage">Reminder Message:</label>
+    <textarea id="reminderMessage" name="reminderMessage" required></textarea>
+
+    <label for="recipient">Send Reminder To:</label>
+    <select id="recipient" name="recipient" required>
+      <option value="banker">Pick The Message To Who</option>
+      <option value="client">Client</option>
+      <option value="allClients">All Clients</option>
+      <option value="specificClient">Specific Client</option>
+     
+      <option value="allBankers">All Bankers</option>
+      <option value="specificBanker">Specific Banker</option>
+      <option value="everyone">Everyone</option>
+    </select>
+
+    <div id="specificClientInput" style="display: none;">
+      <label for="clientID">Client ID:</label>
+      <input type="text" id="clientID" name="clientID">
+    </div>
+
+    <div id="specificBankerInput" style="display: none;">
+      <label for="bankerID">Banker ID:</label>
+      <input type="text" id="bankerID" name="bankerID">
+    </div>
+
+    <button type="submit">Send Reminder</button>
+  </form>
+
+  <script>
+    const recipientSelect = document.getElementById("recipient");
+    const specificClientInput = document.getElementById("specificClientInput");
+    const specificBankerInput = document.getElementById("specificBankerInput");
+
+    recipientSelect.addEventListener("change", function() {
+      if (recipientSelect.value === "specificClient") {
+        specificClientInput.style.display = "block";
+        specificBankerInput.style.display = "none";
+      } else if (recipientSelect.value === "specificBanker") {
+        specificClientInput.style.display = "none";
+        specificBankerInput.style.display = "block";
+      } else {
+        specificClientInput.style.display = "none";
+        specificBankerInput.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

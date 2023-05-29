@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin - Credit Card Replacement</title>
+  <link rel="stylesheet" href="path/to/your/css/styles.css"> <!-- Add your CSS stylesheets here -->
+  <style>
+    /* Add any additional custom styles here */
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .no-requests {
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin - Credit Card Replacement</h1>
+
+  <% if (creditCardRequests.length > 0) { %>
+    <table>
+      <tr>
+        <th>Client Name</th>
+        <th>Card Type</th>
+        <th>Reason</th>
+        <th>Actions</th>
+      </tr>
+      <% creditCardRequests.forEach(request => { %>
+        <tr>
+          <td><%= request.clientName %></td>
+          <td><%= request.cardType %></td>
+          <td><%= request.reason %></td>
+          <td>
+            <form action="/approve_replacement" method="POST" onsubmit="removeClientInfo(this)">
+              <input type="hidden" name="requestId" value="<%= request.id %>">
+              <button type="submit" class="approve-button">Approve</button>
+            </form>
+            <form action="/reject_replacement" method="POST" onsubmit="removeClientInfo(this)">
+              <input type="hidden" name="requestId" value="<%= request.id %>">
+              <button type="submit" class="reject-button">Reject</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  <% } else { %>
+    <p class="no-requests">No replacement requests to display.</p>
+  <% } %>
+
+  <!-- Add a client for testing purposes -->
+  <% const client = { clientName: "John Doe", cardType: "Visa", reason: "Lost card" }; %>
+  <% const showTestClient = true; %> <!-- Set to false to hide the test client -->
+  <% if (showTestClient) { %>
+    <h2>Test Client</h2>
+    <table>
+      <tr>
+        <th>Client Name</th>
+        <th>Card Type</th>
+        <th>Reason</th>
+        <th>Actions</th>
+      </tr>
+      <tr id="testClientRow">
+        <td><%= client.clientName %></td>
+        <td><%= client.cardType %></td>
+        <td><%= client.reason %></td>
+        <td>
+          <form action="/approve_replacement" method="POST" onsubmit="removeClientInfo(this)">
+            <input type="hidden" name="requestId" value="12345">
+            <button type="submit" class="approve-button">Approve</button>
+          </form>
+          <form action="/reject_replacement" method="POST" onsubmit="removeClientInfo(this)">
+            <input type="hidden" name="requestId" value="12345">
+            <button type="submit" class="reject-button">Reject</button>
+          </form>
+        </td>
+      </tr>
+    </table>
+  <% } %>
+
+  <script>
+    // Function to remove the client row when the Reject or Approve button is clicked
+    function removeClientInfo(form) {
+      const row = form.closest('tr');
+      row.remove();
+      return false; // Prevent form submission
+    }
+  </script>
+</body>
+</html>
