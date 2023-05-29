@@ -25,7 +25,13 @@ app.get('/', (req, res) => {
 
 
 
-
+app.get('/banker_dashboard', (req, res) => {
+  if (req.session.userType === 'banker') {
+    res.render('banker_dashboard', { registrations });
+  } else {
+    res.redirect('/login');
+  }
+});
 app.get('/registrationBanker', (req, res) => {
   res.render('registrationBanker');
 });
@@ -85,15 +91,25 @@ app.post('/banker/confirm', (req, res) => {
     return;
   }
 
-  res.redirect('/banker/dashboard');
+  res.redirect('/banker_dashboard');
 });
 
-app.get('/banker/dashboard', (req, res) => {
-  if (req.session.userType === 'banker') {
-    res.render('banker_dashboard', { registrations });
-  } else {
-    res.redirect('/login');
-  }
+
+  
+app.get('/admin_dashboard', (req, res) => {
+  res.render('admin_dashboard');
+});
+app.get('/view_single_loan', (req, res) => {
+  res.render('view_single_loan');
+});
+app.get('/view_single_CC', (req, res) => {
+  res.render('view_single_CC');
+});
+app.get('/View_ClientsDetails', (req, res) => {
+  res.render('View_ClientsDetails');
+});
+app.get('/View_Clients', (req, res) => {
+  res.render('View_Clients');
 });
 
 app.get('/rejection_page', (req, res) => {
@@ -110,8 +126,16 @@ app.post('/login', (req, res) => {
   if (username === 'banker' && password === 'password') {
     req.session.userType = 'banker';
     res.redirect('/registrationBanker');
-    return;
+    return;}
+    if (username === 'admin' && password === 'password') {
+      req.session.userType = 'admin';
+      res.redirect('/admin_dashboard');
+      return;
   }
+
+
+  
+
 
   const rejectedUser = rejectedRegistrations.find(reg => reg.username === username && reg.password === password);
   if (rejectedUser) {
@@ -181,6 +205,72 @@ app.post('/logout', (req, res) => {
   });
 });
 
+
+app.get('/Recieve_technical_issues', (req, res) => {
+  const technicalIssues = [];
+  res.render('Recieve_technical_issues', { technicalIssues });
+});
+app.get('/View_Reports', (req, res) => {
+  const technicalIssues = [];
+  res.render('View_Reports' );
+});
+app.get('/Accept_CC', (req, res) => {
+  const technicalIssues = [];
+  res.render('Accept_CC');
+});
+app.get('/Accept_Loan', (req, res) => {
+  const technicalIssues = [];
+  res.render('Accept_Loan',);
+});
+
+app.get('/Admin_receive_notifications', (req, res) => {
+  const notifications = [];
+  res.render('Admin_receive_notifications', { notifications });
+});
+
+app.get('/Admin_set_reminder', (req, res) => {
+  res.render('Admin_set_reminder');
+});
+
+app.get('/credit_card_replacement', (req, res) => {
+  
+  const creditCardRequests = []; 
+  
+  res.render('credit_card_replacement', { creditCardRequests });
+});
+
+
+app.get('/search_clients', (req, res) => {
+  res.render('search_clients');
+});
+app.get('/Bank_finance', (req, res) => {
+
+});
+
+
+
+app.post('/search_clients', (req, res) => {
+  const { clientName } = req.body;
+
+  // Perform the search logic to retrieve the client based on the clientName
+  const client = [];
+
+  if (client) {
+    // Retrieve the necessary data for the client
+    const bankAccountTransactions = getBankAccountTransactions(client.id);
+    const creditCardTransactions = getCreditCardTransactions(client.id);
+    const creditCardPoints = getCreditCardPoints(client.id);
+
+    res.render('search_clients', {
+      client,
+      bankAccountTransactions,
+      creditCardTransactions,
+      creditCardPoints
+    });
+  } else {
+    res.render('search_clients', { client: null });
+  }
+});
 
 
 
