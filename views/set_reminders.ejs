@@ -1,139 +1,204 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Set Reminders</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <style>
-    body {
-      background-color: #f5f5f5;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 40px;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      margin: 20px 0;
-      font-size: 24px;
-      color: #333;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #666;
-    }
-
-    textarea {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .date-picker {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    .select-wrapper {
-      position: relative;
-    }
-
-    .select-wrapper::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 6px solid #ccc;
-      pointer-events: none;
-    }
-
-    .select-wrapper select {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      appearance: none;
-      background-color: transparent;
-      background-image: linear-gradient(to bottom, #fff, #fff 50%, #f9f9f9 50%);
-      background-size: 100% 2px;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css"/>
+    <link rel ="stylesheet" href = "https://fontawesome.com/icons/message-question?f=classic&s=solid"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+      
+        
+        body { 
+          overflow: hidden;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+       background-image: url('Home.png');
       background-repeat: no-repeat;
-      background-position: center bottom;
-      box-sizing: border-box;
-    }
-
-    .specific-clients {
-      display: none;
-    }
-
-    .search-client-input {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    .selected-clients {
-      margin-top: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      list-style-type: none;
-    }
-
-    .selected-clients li {
-      margin-bottom: 5px;
-    }
-
-    .submit-button {
-      padding: 10px 20px;
-      background-color: #4CAF50; /* Green color */
-      color: #fff; /* White color */
-      font-size: 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .submit-button:hover {
-      background-color: #45a049; /* Darker shade of green on hover */
-    }
-  </style>
+      background-attachment: fixed;
+      background-size:100% 87%;
+      background-position: bottom ;
+      margin: 0%;
+      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;      
+      
+        }
+        
+        .header {
+          background-color: #6eb1bd;
+          position: relative;
+        }
+        .header button{
+          position: absolute;
+          top: 25%;
+          width: 8%;
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+          margin-left: 90%;
+          color: #ffffff;
+          background-color: #000000;
+        }
+         
+       
+        
+        h1 {
+          position: absolute;
+          top: 15%;
+          width: 100%;
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          margin-left: 40%;
+          color: #000000;
+        }
+        
+       
+        button {
+          padding: 10px 20px;
+          background-color: #0066cc;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #004f99;
+        }
+        a {
+          color: #000000;
+          text-decoration: none;
+        }
+        a:hover {
+          
+          color: #186cc7;
+        }
+       
+        .container {
+          max-width: 500px;
+          margin: 0 auto;
+          padding: 40px;
+          background-color: #fff;
+        
+        }
+    
+        .form-group {
+          margin-bottom: 20px;
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+          color: #000000;
+          margin-left: 2%;
+        }
+    
+        textarea {
+          width: 39%;
+          margin-left: 2%;
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          resize: vertical;
+          min-height: 100px;
+        }
+    
+        .date-picker {
+          width: 40%;
+          padding: 10px;
+          margin-left: 2%;
+          font-size: 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+    
+        .select-wrapper {
+          position: relative;
+        }
+    
+        .select-wrapper::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 6px solid #ccc;
+          pointer-events: none;
+          margin-left: 2%;
+        }
+         
+    
+        
+    
+        .specific-clients {
+          display: none;
+        }
+    
+        .search-client-input {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+          
+        }
+    
+        .selected-clients {
+          margin-top: 10px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          list-style-type: none;
+          margin-left: 2%;
+        }
+    
+        .selected-clients li {
+          margin-bottom: 5px;
+          margin-left: 2%;
+        }
+    
+        .submit-button {
+          padding: 10px 20px;
+          background-color: #4CAF50; /* Green color */
+          color: #fff; /* White color */
+          font-size: 16px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+    
+        .submit-button:hover {
+          background-color: #45a049; /* Darker shade of green on hover */
+        }
+       
+        
+       
+        </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Set Reminders</h1>
 
+<body>
+
+    <div class="header">
+          
+          <img src="Logo.png" alt:"L" width="300" height="100" >
+          <h1>Set Reminders</h1>
+          <form method="GET" action="/login">
+            <button>Logoff</button>
+          </form>
+    </div>
     <form action="/set_reminders" method="POST">
       <div class="form-group">
         <label for="message">Message:</label>
@@ -148,7 +213,7 @@
       <div class="form-group">
         <label for="recipientType">Recipient Type:</label>
         <div class="select-wrapper">
-          <select id="recipientType" name="recipientType">
+          <select id="recipientType" name="recipientType" style="margin-left: 2%;padding: 0.5%">
             <option value="all">All Clients</option>
             <option value="specific">Specific Clients</option>
           </select>
@@ -209,5 +274,26 @@
       dateFormat: 'Y-m-d H:i',
     });
   </script>
+      </div>
+              
+     
+     
+
+      
+       
+           
+     
+
+
+    
+    
+
+
+
+
+
+
+
+    
 </body>
 </html>

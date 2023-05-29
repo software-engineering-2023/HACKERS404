@@ -2,12 +2,117 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Report Card Theft</title>
-  <!-- Add any necessary stylesheets or scripts -->
+  <title>View Credit Card Points</title>
+ 
+  <style>
+    body { 
+      overflow: hidden;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+   background-image: url('Home.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:100% 87%;
+  background-position: bottom ;
+  margin: 0%;
+  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;      
+  
+    }
+    
+    .header {
+      background-color: #6eb1bd;
+      position: relative;
+    }
+    .header button{
+      position: absolute;
+      top: 25%;
+      width: 8%;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 90%;
+      color: #ffffff;
+      background-color: #000000;
+    }
+     
+    button {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004f99;
+    }
+   
+    
+    .header h1 {
+      position: absolute;
+      top: 15%;
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: auto;
+      color: #000000;
+    }
+   
+    .newcreditcard{
+      padding: 140px;
+    }
+    .move-me{
+        width: 10px;
+        height: 400px;
+        position: relative;
+        top: -120px;
+        left: -130px;
+    }
+   
+  
+
+
+
+  </style>
 </head>
 <body>
-  <!-- Add your HTML content for the report card theft page -->
-  <h1>Report Card Theft</h1>
-  <p>Report any incidents of card theft here.</p>
+  <div class="header">
+          
+    <img src="Logo.png" alt:"L" width="300" height="100" >
+    <h1>Report Credit Card Theft</h1>
+    <form method="GET" action="/login">
+      <button>Logoff</button>
+    </form>
+</div>
+<p>
+  Your Report has been send to the admin, and will be handled as soon as possible.
+</p>
+<p>Your Credit Has been deactivated permanently and no further Transaction can be done using this Credit Card.</p>
+<p>You are adviced to apply for a new Credit Card.</p>
+<section class="section">
+  <div>
+    <img src="newcreditcard.png" alt="Paris" style="width:30%" class="move-me"  >
+  </div>
+  </section>
+<form  method="get" action="/creditcardrequest">
+  <button style="background-color: #5e83f1;
+  border:none ;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 88px 400px;
+  cursor: pointer;
+  position: relative;
+  top: -480px;
+  right: 180px;">Apply for new a CreditCard 
+</button>
+</form>
+  
 </body>
 </html>

@@ -1,95 +1,301 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>View Credit Card Transactions</title>
-  <style>
-    body {
-      background-image: url('Side Page.jpg');
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css"/>
+    <link rel ="stylesheet" href = "https://fontawesome.com/icons/message-question?f=classic&s=solid"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+      
+        
+        body { 
+          overflow: hidden;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+       background-image: url('Home.png');
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-size: 100% 100%;
+      background-size:100% 87%;
+      background-position: bottom ;
+      margin: 0%;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0px;
-    }
-
-    h1 {
-      margin: 20px 0;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-
-    .search-form {
-      margin-bottom: 20px;
-    }
-
-    .search-input {
-      width: 300px;
-      padding: 8px;
-      font-size: 16px;
-    }
-
-    .search-button {
-      padding: 8px 16px;
-      font-size: 16px;
-      background-color: #4CAF50; /* Green color */
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h1>View Credit Card Transactions</h1>
-
-  <form class="search-form">
-    <input type="text" class="search-input" id="searchInput" placeholder="Search by account name...">
-    <button type="button" class="search-button" onclick="searchClient()">Search</button>
-  </form>
-
-  <table id="clientTable">
-    <tr>
-      <th>Client</th>
-      <th>Account</th>
-      <th>Credit Cards</th>
-    </tr>
-    <!-- Client data will be dynamically added here -->
-  </table>
-
-  <script>
-    function searchClient() {
-      const input = document.getElementById("searchInput");
-      const keyword = input.value.toLowerCase();
-
-      const clientTable = document.getElementById("clientTable");
-      const rows = clientTable.getElementsByTagName("tr");
-
-      for (let i = 1; i < rows.length; i++) {
-        const clientName = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
-        if (clientName.includes(keyword)) {
-          rows[i].style.display = "";
-        } else {
-          rows[i].style.display = "none";
+      font-family: Arial, Helvetica, sans-serif;      
+      
         }
-      }
-    }
-  </script>
+        
+        .header {
+          background-color: #6eb1bd;
+          position: relative;
+        }
+        .header button{
+          position: absolute;
+          top: 25%;
+          width: 8%;
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+          margin-left: 90%;
+          color: #ffffff;
+          background-color: #000000;
+        }
+         
+       
+        
+        h1 {
+          position: absolute;
+          top: 15%;
+          left: 38%;
+          width: 100%;
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          margin-left: -0%;
+          color: #000000;
+        }
+        p {
+          font-size: 18px;
+          margin-bottom: 10px;
+          color: #000000;
+          margin-left: 2%;
+        }
+       
+       
+        button {
+          padding: 10px 20px;
+          background-color: #0066cc;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #004f99;
+        }
+        a {
+          color: #000000;
+          text-decoration: none;
+        }
+        a:hover {
+          
+          color: #186cc7;
+        }
+       
+        table {
+          border-collapse: collapse;
+          width: 47%;
+          margin-top: 2%;
+        }
+    
+        th, td {
+          border: 1px solid #6eb1bd;
+          padding: 8px;
+        }
+    
+        th {
+          background-color: #ffffff;
+        }
+    
+        tr:nth-child(even) {
+          background-color: #6eb1bd;
+        }
+    
+        .search-form {
+
+          margin-top: 2%;
+        }
+    
+        .search-input {
+          width: 300px;
+          padding: 8px;
+          font-size: 16px;
+        }
+    
+        .search-button {
+          padding: 8px 16px;
+          font-size: 16px;
+          background-color: #4CAF50; /* Green color */
+          color: white;
+          border: none;
+          cursor: pointer;
+        }
+        
+       
+        
+       
+        </style>
+</head>
+
+<body>
+
+    <div class="header">
+          
+          <img src="Logo.png" alt:"L" width="300" height="100" >
+          <h1>View Credit Card Transactions</h1>
+          <form method="GET" action="/login">
+            <button>Logoff</button>
+          </form>
+    </div>
+          <form class="search-form">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search by account name...">
+            <button type="button" class="search-button" onclick="searchAccount()">Search</button>
+          </form>
+        
+          <table id="accountTable">
+           
+            <!-- Account data will be dynamically added here -->
+          </table>
+          <div class="logoff-button">
+           
+          </div>
+          <table WIDTH= 455>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Ref.</th>
+              <th>Withdrawals</th>
+              <th>Deposits</th>
+              <th>Balance</th>
+            </tr>
+            <tr>
+              <td>2023-10-08</td>
+              <td>Previous Balance</td>
+              <td>3324</td>
+              <td>0.00</td>
+              <td>0.00</td>
+              <td>0.55</td>
+            </tr>
+            <tr>
+              <td>2023-10-14</td>
+              <td>Payroll Deposit - HOTEL</td>
+              <td>3324</td>
+              <td>0.00</td>
+              <td>694.81</td>
+              <td>695.35</td>
+            </tr>
+           
+            <tr>
+              <td>2023-10-14</td>
+              <td>Web Bill Payment - MASTERCARD</td>
+              <td>9685</td>
+              <td>200.00</td>
+              <td>0.00</td>
+              <td>495.36</td>
+            </tr>  
+          
+            <tr>
+              <td>2023-10-16</td>
+              <td>ATM Withdrawl - INTERAC</td>
+              <td>3990</td>
+              <td>21.25</td>
+              <td>0.00</td>
+              <td>474.11</td>
+            </tr>  
+           
+            <tr>
+              <td>2023-10-16</td>
+              <td>Fees - INTERAC</td>
+              <td>7860</td>
+              <td>1.50</td>
+              <td>0.00</td>
+              <td>472.61</td>
+            </tr>  
+            <tr>
+              <td>2023-10-20</td>
+              <td>Interac Purchase - ELECTRONICS</td>
+              <td>1975</td>
+              <td>2.99</td>
+              <td>0.00</td>
+              <td>469.62</td>
+            </tr> 
+            <tr>
+              <td>2023-10-21</td>
+              <td>Web Bill Payment - AMEX</td>
+              <td>3314</td>
+              <td>300.00</td>
+              <td>0.00</td>
+              <td>169.62</td>
+            </tr> 
+            <tr>
+              <td>2023-10-22</td>
+              <td>ATM Withdrawal - FIRST BANK</td>
+              <td>0064</td>
+              <td>100.00</td>
+              <td>0.00</td>
+              <td>69.62</td>
+            </tr> 
+            <tr>
+              <td>2023-10-23</td>
+              <td>Interac Purchase - SUPERMARKET</td>
+              <td>1559</td>
+              <td>29.08</td>
+              <td>0.00</td>
+              <td>40.54</td>
+            </tr> 
+            <tr>
+              <td>2023-10-24</td>
+              <td>Interac Refund - ELECTRONICS</td>
+              <td>1975</td>
+              <td>0.00</td>
+              <td>2.99</td>
+              <td>43.53</td>
+            </tr> 
+            <tr>
+              <td colspan="3">TOTALS</td>
+              <td>654.82</td>
+              <td>697.8</td>
+              <td>2,930.37</td>
+              
+            </tr> 
+          </table>
+          <br/>
+          
+          
+           
+             
+          </table>
+          <script>
+            function searchAccount() {
+              const input = document.getElementById("searchInput");
+              const keyword = input.value.toLowerCase();
+        
+              const accountTable = document.getElementById("accountTable");
+              const rows = accountTable.getElementsByTagName("tr");
+        
+              for (let i = 1; i < rows.length; i++) {
+                const accountName = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+                if (accountName.includes(keyword)) {
+                  rows[i].style.display = "";
+                } else {
+                  rows[i].style.display = "none";
+                }
+              }
+            }
+          </script>
+      </div>
+              
+     
+     
+
+      
+       
+           
+     
+
+
+    
+    
+
+
+
+
+
+
+
+    
 </body>
 </html>

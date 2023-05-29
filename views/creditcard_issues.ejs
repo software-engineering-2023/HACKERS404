@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>View Credit Card Points</title>
+ 
+  <style>
+    body { 
+      overflow: hidden;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+   background-image: url('Home.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:100% 87%;
+  background-position: bottom ;
+  margin: 0%;
+  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;      
+  
+    }
+
+    
+    .header {
+      background-color: #6eb1bd;
+      position: relative;
+    }
+    .header button{
+      position: absolute;
+      top: 25%;
+      width: 8%;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 90%;
+      color: #ffffff;
+      background-color: #000000;
+    }
+    
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px; 
+      line-height: 25px;
+      border-radius: 4px;
+    }
+    
+    .header a:hover {
+      color: rgb(49, 114, 255);
+    }
+    
+    .header a.active {
+      background-color: rgb(8, 9, 9);
+      color: white;
+      font-size: 20px;
+    }
+     
+   
+    
+    .header h1 {
+      position: absolute;
+      top: 15%;
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-left: auto;
+      color: #000000;
+    }
+    image{
+      size:43px;
+      padding: 30px;
+      width: 30%;
+      position:relative;
+    }
+    h1{
+      font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 1%;
+        color: black;
+    }
+    title{
+      align-content: center;
+      align-items: center;
+      
+  
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0066cc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004f99;
+    }
+  
+
+
+
+  </style>
+</head>
+<body>
+  <div class="header">
+          
+    <img src="Logo.png" alt:"L" width="300" height="100" >
+    <h1>Credit Card Points</h1>
+    <form method="GET" action="/login">
+      <button>Logoff</button>
+    </form>
+    
+</div>
+<div >
+  <img src="damage.png" alt="Paris" style="width:250px" >
+</div>
+<div >
+  <img src="loss.png" alt="Paris" style="width:250px" >
+</div>
+<div >
+  <img src="theft.png" alt="Paris" style="width: 200px" >
+</div>
+
+
+<form method="get" action="/reportcreditcarddamage">
+<button style=" background-color: #4169e1;
+border:none ;
+color: white;
+padding: 15px 80px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 88px 400px;
+cursor: pointer;
+position: relative;
+top: -670px;
+right: 180px;" type="submit">Report CreditCard Damage</button>  
+</form>
+
+<form method="get" action="/reportcreditcardloss">
+<button style=" background-color: #4169e1;
+border:none ;
+color: white;
+padding: 15px 80px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 88px 400px;
+cursor: pointer;
+position: relative;
+top: -670px;
+right: 180px;" type="submit">Report CreditCard Loss</button>  
+</form>
+
+
+<form method="get" action="/reportcreditcardtheft">
+  <button style=" background-color: #4169e1;
+  border:none ;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 88px 400px;
+  cursor: pointer;
+  position: relative;
+  top: -670px;
+  right: 180px;" type="submit">Report CreditCard Theft</button>  
+  </form>
+<!-- Add content for reporting technical issues here -->
+
+  
+</body>
+</html>
