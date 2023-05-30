@@ -135,34 +135,23 @@ app.post('/login', (req, res) => {
   if (username === 'banker' && password === 'password') {
     req.session.userType = 'banker';
     res.redirect('/registrationBanker');
-    return;}
-    if (username === 'admin' && password === 'password') {
-      req.session.userType = 'admin';
-      res.redirect('/admin_dashboard');
-      return;
-  }
-
-
-  
-
-
-  const rejectedUser = rejectedRegistrations.find(reg => reg.username === username && reg.password === password);
-  if (rejectedUser) {
-    res.redirect('/rejection_page');
     return;
   }
 
-  const client = clients.find(client => client.username === username && client.password === password);
-  if (client) {
-    if (client.status === 'client') {
-      req.session.userType = 'client';
-      res.redirect('/client_dashboard');
-    } else {
-      res.render('registration_success', { username });
-    }
-  } else {
-    res.render('login', { error: 'Invalid username or password' });
+  if (username === 'admin' && password === 'password') {
+    req.session.userType = 'admin';
+    res.redirect('/admin_dashboard');
+    return;
   }
+
+  if (username === '1' && password === '1') {
+    req.session.userType = 'client';
+    res.redirect('/client_dashboard');
+    return;
+  }
+
+  // Handle invalid login credentials
+  res.render('login', { error: 'Invalid username or password' });
 });
 
 app.get('/client_dashboard', (req, res) => {
